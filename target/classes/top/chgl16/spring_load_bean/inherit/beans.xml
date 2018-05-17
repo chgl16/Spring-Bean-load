@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 配置一个Student对象 -->
+	<bean id="student" class="top.chgl16.spring_load_bean.inherit.Student">
+		<property name="name" value="小明" />
+		<property name="age" value="22" />
+	</bean>
+	
+	<!-- 配置一个Graduate对象 -->
+	<bean id="graduate" parent="student" class="top.chgl16.spring_load_bean.inherit.Graduate">
+		<!-- parent属性表示继承 -->
+		<property name="degree" value="学士" />
+		<property name="name" value="小红" />
+		<!-- 重写会覆盖父类属性 -->
+	</bean>
+</beans>

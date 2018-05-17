@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="no">   <!-- 在beans标签后面设置autowire的默认类型 -->
+	<!-- 配置一个Master对象 -->
+	<bean id="master" class="top.chgl16.spring_load_bean.autowire.Master" autowire="constructor">
+		<property name="name" value="小林" />
+	</bean>
+	
+	<!-- 配置一个Dog对象 -->
+	<bean id="dog1" class="top.chgl16.spring_load_bean.autowire.Dog">
+		<property name="name" value="小黄狗" />
+		<property name="age" value="3" />
+	</bean>
+	
+	<!-- 配置另一个Dog对象 -->
+	<bean id="dog" class="top.chgl16.spring_load_bean.autowire.Dog">
+		<property name="name" value="小黑狗" />
+		<property name="age">
+			<value>2</value>
+		</property>
+	</bean>
+	
+</beans>

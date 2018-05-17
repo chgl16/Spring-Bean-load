@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 配置Person对象 -->
+	<!-- 完全构造函数 -->
+	<bean id="person1" class="top.chgl16.spring_load_bean.constructor.Person">
+		<!-- 通过构造函数注入 -->
+		<constructor-arg index="0" value="小明" />
+		<constructor-arg index="1" value="20" />
+	</bean>
+	<!-- 部分构造函数 -->
+	<bean id="person2" class="top.chgl16.spring_load_bean.constructor.Person">
+		<!-- 如果存在两个只有一个参数的构造函数，需要指定参数类型 type="" -->
+		<constructor-arg index="0" type="int" value="15" />
+	</bean>
+	<!-- 无参构造函数 -->
+	<bean id="person3" class="top.chgl16.spring_load_bean.constructor.Person" />
+</beans>

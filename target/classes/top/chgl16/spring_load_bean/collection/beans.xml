@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="department"  class="top.chgl16.spring_load_bean.collection.Department" >
+        <property name="name">
+            <value>财务部</value>
+        </property>
+        
+        <!-- 给数组注入 -->
+        <property name="empStr">
+        	<list>          <!-- 和List集合一样是list -->
+        		<value>小明</value>
+        		<value>小红</value>
+        		<value>小琴</value>
+        	</list>
+        </property>
+        
+        <!-- 给List集合注入 -->
+        <property name="empList">
+        	<list>    
+        		<ref bean="emp1" />
+        		<ref bean="emp2" />
+        		<ref bean="emp3" />
+        	</list>
+        </property>
+        
+        <!-- 给Set集合注入 -->
+        <property name="empSet">
+        	<set>    
+        		<ref bean="emp1" />
+        		<ref bean="emp2" />
+        		<ref bean="emp3" />
+        	</set>
+        </property>
+        
+        <!-- 给Map集合注入 -->
+        <property name="empMap">
+        	<map>
+        		<entry key="1" value-ref="emp1" />
+        		<entry key="2" value-ref="emp2" />
+        		<entry key="3" value-ref="emp3" />
+        	</map>
+        </property>
+    </bean>
+    
+    
+    <!-- 配置Employee类bean -->
+    <bean id="emp1" class="top.chgl16.spring_load_bean.collection.Employee">
+    	<property name="name" value="小陈" />	
+    </bean>
+    <bean id="emp2" class="top.chgl16.spring_load_bean.collection.Employee">
+    	<property name="name" value="小李" /> 	
+    </bean>
+    <bean id="emp3" class="top.chgl16.spring_load_bean.collection.Employee">
+    	<property name="name" value="小林" />
+    </bean>
+</beans>
